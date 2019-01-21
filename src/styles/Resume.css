@@ -1,0 +1,27 @@
+.resume {
+  background: white;
+  border-radius: 10px;
+}
+
+.avatar__img {
+  border-radius: 100%;
+  max-width: 150px;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  color: black;
+}
+
+@media only screen and (min-width: 992px) {
+  .block--flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .respositories {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}

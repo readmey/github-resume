@@ -1,0 +1,35 @@
+.form__input {
+  border: 0;
+  border-bottom: 1px solid var(--color-gray);
+  margin-top: 0.5rem;
+  height: 30px;
+  width: 300px;
+  font-size: 1rem;
+}
+
+.form__input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--primary-blue);
+}
+
+.form__label {
+  color: var(--color-gray);
+  font-size: 0.8rem;
+  margin-right: 1rem;
+  display: block;
+}
+
+.form__input--submit {
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  font-weight: bold;
+  background-color: var(--primary-blue);
+  height: 36px;
+  padding: 0 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.form__input--submit:focus {
+  outline: none;
+}
