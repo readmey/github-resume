@@ -1,6 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Github Resume",
+  "name": "Github Resume",
+  "author": "My Trang Hong",
+  "default_locale": "en",
+  "description": "A React SPA that lets users build a github resumé",
   "icons": [
     {
       "src": "favicon.ico",
