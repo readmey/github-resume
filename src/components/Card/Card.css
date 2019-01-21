@@ -11,6 +11,11 @@
   font-weight: bold;
 }
 
+.link--title {
+  text-decoration: none;
+  color: black;
+}
+
 @media only screen and (min-width: 992px) {
   .card {
     width: 40%;

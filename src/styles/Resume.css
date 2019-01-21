@@ -13,6 +13,14 @@
   color: black;
 }
 
+.icon--align-middle {
+  vertical-align: middle;
+}
+
+.info {
+  margin: 2rem 0;
+}
+
 @media only screen and (min-width: 992px) {
   .block--flex {
     display: flex;
