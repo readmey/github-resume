@@ -28,7 +28,7 @@ export default class Resume extends Component {
       this.setState({ data: data })
     })
     .catch(err => {
-      console.log('ERR', err)
+      console.log(err)
       this.props.history.push({
         pathname: '/404',
         state: { user: this.props.match.params.username }
