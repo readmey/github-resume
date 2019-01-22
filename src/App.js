@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LandingPage from './pages/LandingPage';
 import Resume from './pages/Resume'
-import NotFoundPage from './pages/NotFoundPage'
+import NotFoundPage from './components/NotFoundPage'
 
 import "./App.css";
 require('dotenv').config()

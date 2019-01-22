@@ -71,7 +71,9 @@ export default class Resume extends Component {
   }
 
   render () {
-    const { data } = this.state
+    const { data,  } = this.state
+    const { username } = this.props.match.params
+
     if(data) {
       const name = data.name ? (<p><i className="icon fas fa-user"></i> {data.name}</p>) : null
       const biography = data.bio ? (<p><i className="icon fas fa-book"></i> {data.bio}</p>) : null
@@ -79,7 +81,8 @@ export default class Resume extends Component {
       const company = data.company ? (<p><i className="icon far fa-building"></i>{data.company}</p>) : null
 
       return (
-        <div className="resume container">
+        <div id="resume">
+        <div className="container container--bg-white">
           <Link to="/" className="link--back">
             <i className="icon fas fa-chevron-left fa-2x"></i>
           </Link>
@@ -101,12 +104,13 @@ export default class Resume extends Component {
               <Card item={repo} key={index} />
             )) : (
               <div className="info">
-                <i className="icon fas fa-times-circle"></i>
-                <span>this github user currently does not have any repositories</span>
+               <i className="icon fas fa-info-circle"></i>               
+               <span>{username} does not has any repositories</span>
               </div>
             )}
           </div>
         </div>
+      </div>
       )
     } else {
       return (
