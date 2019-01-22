@@ -26,7 +26,7 @@ export default class Home extends Component {
             <br />
             <div className="text--center">
             <form className="form">
-              <input className="form__input" type="text" onChange={this.handleChange} placeholder="type in github username" />
+              <input className="form__input" id="username" type="text" onChange={this.handleChange} placeholder="type in github username" />
               <input className="form__input--submit" type="submit" onClick={this.handleSubmit} value="generate" />
             </form>
           </div>

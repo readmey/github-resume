@@ -71,10 +71,10 @@ export default class Resume extends Component {
   }
 
   render () {
-    const { data,  } = this.state
-    const { username } = this.props.match.params
+    const { data  } = this.state
 
     if(data) {
+      const { username } = this.props.match.params
       const name = data.name ? (<p><i className="icon fas fa-user"></i> {data.name}</p>) : null
       const biography = data.bio ? (<p><i className="icon fas fa-book"></i> {data.bio}</p>) : null
       const location = data.location ? (<p><i className="icon fas fa-map-marker-alt"></i>{data.location}</p>) : null
@@ -115,7 +115,7 @@ export default class Resume extends Component {
     } else {
       return (
         <div className="resume container">
-          <p>Loading..</p>
+          <p>Loading...</p>
         </div>
       )
     }
