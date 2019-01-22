@@ -5,7 +5,6 @@ import Resume from './pages/Resume'
 import NotFoundPage from './components/NotFoundPage'
 
 import "./App.css";
-require('dotenv').config()
 
 const App = () => (
   <Router>
