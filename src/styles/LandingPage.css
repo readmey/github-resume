@@ -35,6 +35,11 @@
   outline: none;
 }
 
+.input__validation--error, .input__validation--error .icon {
+  color: red;
+  font-size: 0.9rem;
+}
+
 .text--center {
   text-align: center;
 }
