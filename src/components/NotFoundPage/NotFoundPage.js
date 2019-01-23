@@ -3,8 +3,8 @@ import React from 'react';
 const NotFoundPage = (props) => {
   const { location } = props
 
-  setInterval(() => {props.history.push('/')}, 1000)
-
+  setTimeout(() => {props.history.push('/')}, 1000)
+  
   return (
     <div id="not-found">
       <div className="container container--bg-white">
