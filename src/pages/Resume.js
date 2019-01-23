@@ -3,15 +3,7 @@ import { Link } from 'react-router-dom'
 import Card from '../components/Card'
 import '../styles/Resume.css';
 
-const { REACT_APP_GITHUB_ACCESS_TOKEN } = process.env
 const GITHUB_API_USER = 'https://api.github.com/users/';
-
-const headers = {
-  method: 'GET',
-  headers: {
-    Authorization: `token ${REACT_APP_GITHUB_ACCESS_TOKEN}`
-  }
-}
 
 export default class Resume extends Component {
   state = {
@@ -46,16 +38,16 @@ export default class Resume extends Component {
 }
   
   fetchUserData(username) {
-      return fetch(GITHUB_API_USER + username, headers)
+      return fetch(GITHUB_API_USER + username)
       .then(this.handleErrors)
   }
   
   fetchUserRepos(username) {
-    return fetch(GITHUB_API_USER + username + '/repos', headers)
+    return fetch(GITHUB_API_USER + username + '/repos')
       .then(this.handleErrors)
       .then(repositories => 
         Promise.all(repositories.map(repo =>
-          fetch(repo.languages_url, headers)
+          fetch(repo.languages_url)
           .then(data => data.json())
           .then(repoLanguages => {
             return {
