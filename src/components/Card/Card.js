@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Card.css'
 import Colors from '../../assets/colors'
 
@@ -22,6 +23,16 @@ const Card = (props) => {
         )}
     </div>
   )
+}
+
+Card.propTypes = {
+  item: PropTypes.shape({
+    name: PropTypes.string,
+    stars: PropTypes.number,
+    languages: PropTypes.object,
+    description:PropTypes.string,
+    url: PropTypes.string
+  })
 }
 
 export default Card

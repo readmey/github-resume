@@ -1,4 +1,5 @@
 import React from 'react';
+import Proptypes from 'prop-types'
 
 const NotFoundPage = (props) => {
   const { location } = props
@@ -16,6 +17,10 @@ const NotFoundPage = (props) => {
       </div>
     </div>
   )
+}
+
+NotFoundPage.propTypes = {
+  location: Proptypes.object.isRequired
 }
 
 export default NotFoundPage

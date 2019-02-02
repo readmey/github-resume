@@ -48,7 +48,7 @@ export default class Resume extends Component {
       .then(repositories => 
         Promise.all(repositories.map(repo =>
           fetch(repo.languages_url)
-          .then(data => data.json())
+          .then(this.handleErrors)
           .then(repoLanguages => {
             return {
               name: repo.name,
@@ -63,7 +63,7 @@ export default class Resume extends Component {
   }
 
   render () {
-    const { data  } = this.state
+    const { data } = this.state
 
     if(data) {
       const { username } = this.props.match.params
