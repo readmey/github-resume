@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../components/Card'
 import '../styles/Resume.css';
+import Loading from '../components/Loading';
 
 const GITHUB_API_USER = 'https://api.github.com/users/';
 
@@ -12,15 +13,14 @@ export default class Resume extends Component {
 
   componentDidMount() {
     const { username } = this.props.match.params
+
     Promise.all([
       this.fetchUserData(username),
       this.fetchUserRepos(username)])
     .then(fetchedData => {
       const data = { ...fetchedData[0], repositories: fetchedData[1] }
       this.setState({ data: data })
-    })
-    .catch(err => {
-      console.log(err)
+    }).catch(err => {
       this.props.history.push({
         pathname: '/404',
         state: { user: this.props.match.params.username }
@@ -45,21 +45,24 @@ export default class Resume extends Component {
   fetchUserRepos(username) {
     return fetch(GITHUB_API_USER + username + '/repos')
       .then(this.handleErrors)
-      .then(repositories => 
-        Promise.all(repositories.map(repo =>
-          fetch(repo.languages_url)
-          .then(this.handleErrors)
-          .then(repoLanguages => {
-            return {
-              name: repo.name,
-              description: repo.description,
-              url: repo.html_url,
-              languages: repoLanguages,
-              stars: repo.stargazers_count,
-              watchers: repo.watchers_count
-            }
-          })
-      )))
+      .then(repositories => this.fetchReposLanguages(repositories))
+  }
+
+  fetchReposLanguages(repositories) {
+    return Promise.all(repositories.map(repo =>
+      fetch(repo.languages_url)
+      .then(this.handleErrors)
+      .then(repoLanguages => {
+        return {
+          name: repo.name,
+          description: repo.description,
+          url: repo.html_url,
+          languages: repoLanguages,
+          stars: repo.stargazers_count,
+          watchers: repo.watchers_count
+        }
+      })
+    ))
   }
 
   render () {
@@ -106,9 +109,7 @@ export default class Resume extends Component {
       )
     } else {
       return (
-        <div className="resume container">
-          <p>Loading...</p>
-        </div>
+        <Loading/>
       )
     }
   }
