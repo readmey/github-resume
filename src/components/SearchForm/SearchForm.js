@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './SearchForm.css'
 
 const SearchForm = (props) => {
@@ -14,6 +15,12 @@ const SearchForm = (props) => {
     ) : null }
     </form>
   )
+}
+
+SearchForm.propTypes = {
+  validationError: PropTypes.bool.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 }
 
 export default SearchForm

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import Card from '../Card'
 
@@ -38,6 +39,10 @@ const UserProfile = (props) => {
       </div>
     </div>
   )
+}
+
+UserProfile.propTypes = {
+  data: PropTypes.object.isRequired
 }
 
 export default UserProfile
