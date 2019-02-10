@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Resume from './Resume.js';
 
 const match = {
@@ -11,10 +11,11 @@ const match = {
   }
 }
 
-it('should render the text Loading...  if state.data is null', () => {
-  const wrapper = shallow(<Resume {...match} />);
-  expect(wrapper.text()).toBe('Loading...');
-});
+// it('should render the Loader component if data is null', () => {
+//   const wrapper = mount(<Resume {...match} />);
+//   wrapper.setState({ isFetching: false })
+//   expect(wrapper.exists('.loader')).toEqual(true)
+// });
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

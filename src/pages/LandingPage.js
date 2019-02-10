@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/LandingPage.css';
+import SearchForm from '../components/SearchForm/'
 
 export default class Home extends Component {
   state = { 
@@ -8,13 +8,13 @@ export default class Home extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({username: event.target.value.trim()})
+    this.setState({username: event.target.value})
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
 
-    if(this.state.username !== "") {
+    if(this.state.username.trim() !== "") {
       this.props.history.push('/user/'+this.state.username+'/resume')
     } else {
       this.setState({ validationError: true })
@@ -31,16 +31,7 @@ export default class Home extends Component {
             </div>
             <br />
             <div className="text--center">
-            <form className="form">
-              <input className="form__input" id="username" type="text" onChange={this.handleChange} placeholder="type in github username" />
-              <input className="form__input--submit" type="submit" onClick={this.handleSubmit} value="generate" />
-              { this.state.validationError ? (
-                <p className="input__validation--error">
-                  <i className="icon fas fa-exclamation-circle"></i>
-                  username is required
-                </p>
-              ) : null }
-            </form>
+              <SearchForm handleSubmit={this.handleSubmit} handleChange={this.handleChange} validationError={this.state.validationError}/>
           </div>
         </div>
       </div>
