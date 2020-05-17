@@ -5,6 +5,8 @@ React SPA that generates a users github resumé <br>
 showing information if available .e.g avatar, name, location, company, bio <br>
 showing users repositories if available with addtional information e.g. name, description, stars, languages <br>
 
+DEMO Linke: https://readmey.github.io/github-resume/
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -33,6 +35,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-#### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
