@@ -5,7 +5,7 @@ React SPA that generates a users github resumé <br>
 showing information if available .e.g avatar, name, location, company, bio <br>
 showing users repositories if available with addtional information e.g. name, description, stars, languages <br>
 
-DEMO Linke: https://readmey.github.io/github-resume/
+DEMO Link: https://readmey.github.io/github-resume/
 
 ## Available Scripts
 
