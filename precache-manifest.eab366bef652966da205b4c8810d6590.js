@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a06a6652ea1740f42eae08fb7b3eee11",
+    "revision": "21b2c4c796de4cdc15f0def7bf542934",
     "url": "/github-resume/index.html"
   },
   {
-    "revision": "bcf75e31425f7d048808",
+    "revision": "273d5baf53a0a3f81098",
     "url": "/github-resume/static/css/main.217b4341.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/github-resume/static/js/2.4a4ef27b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bcf75e31425f7d048808",
-    "url": "/github-resume/static/js/main.3f7205bf.chunk.js"
+    "revision": "273d5baf53a0a3f81098",
+    "url": "/github-resume/static/js/main.b3b3e842.chunk.js"
   },
   {
     "revision": "a55262791d739d1323ab",
