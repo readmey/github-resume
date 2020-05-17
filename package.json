@@ -1,6 +1,6 @@
 {
   "homepage": "https://readmey.github.io/github-resume/",
-  name: "Github Resume",
+  "name": "Github Resume",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
